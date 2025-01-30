@@ -21,5 +21,6 @@ public class ImageGenProperty {
 	int height;
 	
 	int width;
-
+	
+	int numberOfImg;
 }

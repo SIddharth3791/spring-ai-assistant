@@ -5,13 +5,17 @@ import java.util.Base64;
 import java.util.List;
 
 import org.springframework.ai.image.ImagePrompt;
+import org.springframework.ai.image.ImageResponse;
 import org.springframework.ai.openai.OpenAiImageModel;
 import org.springframework.ai.openai.OpenAiImageOptions;
 import org.springframework.stereotype.Service;
 
 import com.springai.app.model.ImageGenProperty;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class ImageGenServiceImpl implements ImageGenService {
 
 	private OpenAiImageModel aiImageModel;
@@ -24,20 +28,26 @@ public class ImageGenServiceImpl implements ImageGenService {
 	}
 	
 	@Override
-	public byte[] generateImage(String question) {
+	public List<String> generateImage(String question) {
 		var imageOption = OpenAiImageOptions.builder()
-				.responseFormat(imageGenProperty.getResponseFormat())
 				.height(imageGenProperty.getHeight())
 				.width(imageGenProperty.getHeight())
 				.model(imageGenProperty.getModelType())
 				.quality(imageGenProperty.getQuality())
+				.N(imageGenProperty.getNumberOfImg())
 				.build();
 		
 		ImagePrompt imagePrompt = new ImagePrompt(question, imageOption);
+	
+		var imgResponse  = aiImageModel.call(imagePrompt);
 		
-		var response  = aiImageModel.call(imagePrompt);
+		List<String> imageUrls = imgResponse.getResults().stream()
+                .map(result -> result.getOutput().getUrl())
+                .toList();
+	
 		
-		return Base64.getDecoder().decode(response.getResult().getOutput().getB64Json());
+		log.info("IMAGE URLS : {}", imageUrls);
+		return imageUrls;
 	}
 
 }

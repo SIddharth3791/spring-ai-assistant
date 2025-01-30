@@ -1,7 +1,9 @@
 package com.springai.app.service.image;
 
+import java.util.List;
+
 public interface ImageGenService {
 	
-	byte[] generateImage(String question);
-
+	List<String>  generateImage(String question);
+	
 }

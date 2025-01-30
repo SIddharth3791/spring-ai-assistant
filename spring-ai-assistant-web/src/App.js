@@ -1,5 +1,8 @@
 import react, {useState} from 'react';
 import './App.css';
+import ImageGenerator from './components/ImageGenerator';
+import RecipeGenerator from './components/RecipeGenerator';
+import ChatGenerator from './components/ChatGenerator';
 
 function App() {
 
@@ -27,9 +30,9 @@ function App() {
       </button>
 
       <div>
-        {activeTab === "image-gen" && <h2>CREATE AN IMAGE FOR ME</h2>}
-        {activeTab === "chat" && <h2>ASK ME ANYTHING</h2>}
-        {activeTab === "recipe-gen" && <h2>SUGGEST ME FOOD RECIPE</h2>}
+        {activeTab === "image-gen" && <ImageGenerator />}
+        {activeTab === "chat" && <ChatGenerator />}
+        {activeTab === "recipe-gen" && <RecipeGenerator />}
       </div>
     </div>
   );

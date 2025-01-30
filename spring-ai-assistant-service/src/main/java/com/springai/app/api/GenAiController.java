@@ -6,7 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.springai.app.service.chat.ChatService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
+@Slf4j
 public class GenAiController {
 	
 	private ChatService chatService;
@@ -18,6 +21,7 @@ public class GenAiController {
 	
 	@GetMapping("/ask")
 	public String askMeAnything(@RequestParam String prompt) {
+		log.info("Calling Chat Service with Prompt:  {}", prompt);
 		return chatService.getResponseFromAi(prompt);
 	}
 
