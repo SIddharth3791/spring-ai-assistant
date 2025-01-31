@@ -13,13 +13,13 @@ function ImageGenerator(){
             const urls = await response.json();
             setImageUrls(urls);
         }catch(error){
-            console.log("Error generating image : ", error)
+            console.log("ERROR WHILE FETCH IMG URLS {}", error)
         }
     }
 
     return (
         <div className="tab-content">
-                <h2>Generate Image</h2>
+                <h2>Generate Custom Image</h2>
                 <input
                     type="text"
                     value={imgPrompt}

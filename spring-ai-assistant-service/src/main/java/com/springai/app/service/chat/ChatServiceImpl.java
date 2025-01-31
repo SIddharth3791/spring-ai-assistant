@@ -13,7 +13,10 @@ import org.springframework.ai.openai.OpenAiImageOptions;
 import org.springframework.ai.openai.api.OpenAiApi;
 import org.springframework.stereotype.Service;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class ChatServiceImpl  implements ChatService{
 
 	private ChatModel chatModel;
@@ -34,7 +37,10 @@ public class ChatServiceImpl  implements ChatService{
 		
 		ChatResponse response = chatModel.call(prompt);
 		
-		return response.getResult().getOutput().getContent();
+		String answer = response.getResult().getOutput().getContent();
+		
+		log.info("Returning AI response {}", answer);
+		return answer;
 	}	
 
 }

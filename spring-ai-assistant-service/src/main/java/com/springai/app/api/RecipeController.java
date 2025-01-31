@@ -1,6 +1,6 @@
 package com.springai.app.api;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +20,7 @@ public class RecipeController {
 	}
 	
 	
-	@GetMapping("/create/recipe")
+	@PostMapping("/create/recipe")
 	public String createFoodRecipe(@RequestBody RecipeRequest recipeRequest ) {
 		log.info("Calling Create Food Recipe Service with Prompt:  {}", recipeRequest);
 		return recipeService.createFoodRecipe(recipeRequest.getIngridients(), 
