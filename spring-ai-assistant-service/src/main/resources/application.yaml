@@ -4,6 +4,12 @@ spring:
  ai:
   openai:
    api-key: ${OPENAI_API_KEY}
+   audio:
+    transcription:
+      base-url: https://api.openai.com
+      options:
+       model: whisper-1
+       response-format: json
 
 img:
  model-type: dall-e-2 ##Deafult is dall-e-2

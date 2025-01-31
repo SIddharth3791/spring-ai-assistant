@@ -4,6 +4,7 @@ package com.springai.app.api;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @Slf4j
+@RequestMapping("/api")
 public class GenImageCotroller {
 	
 	private final ImageGenService imgGenService;
@@ -21,7 +23,7 @@ public class GenImageCotroller {
 		this.imgGenService = imgGenService;
 	}
 	
-	@GetMapping(value = "/createImg")
+	@GetMapping(value = "/create/Img")
 	public List<String> generateImage(@RequestParam String imageIdea) {
 		log.info("Calling Create Image Service with Prompt:  {}", imageIdea);
 		return imgGenService.generateImage(imageIdea);

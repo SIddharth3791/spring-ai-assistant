@@ -2,6 +2,7 @@ package com.springai.app.api;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springai.app.model.RecipeRequest;
@@ -11,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @Slf4j
+@RequestMapping("/api")
 public class RecipeController {
 	
 	private final RecipeService recipeService;
