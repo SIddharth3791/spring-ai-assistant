@@ -16,7 +16,7 @@ This project leverages **OpenAI APIs** and follows a **Microservice & Microfront
 - 🧠 **AI-Powered Chat**: Users can ask questions and get responses from OpenAI.
 - 🎨 **Image Generation**: Users can generate images based on text prompts.
 - 🍽️ **Recipe Generator**: Users can input ingredients, and the AI suggests recipes.
-- 🔊 ****Audio Transcriber**: User can upload Mp3 File, and the AI will transcribe audio file to text.
+- 🔊 **Audio Transcriber**: User can upload Mp3 File, and the AI will transcribe audio file to text.
 - 🔗 **Microservices & Microfrontend**: Uses independent services for scalability and flexibility.
 - 🌟 **Custom Prompt Templates**: Uses `PromptTemplate` to format responses as required.
 
