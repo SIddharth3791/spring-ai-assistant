@@ -7,6 +7,7 @@ I have created a **React and Spring AI** project where users can:
 - Ask questions to **OpenAI** and receive responses.
 - Generate images using **OpenAI's image generation model**.
 - Create **food recipes** based on a list of ingredients.
+- Transcribe Audio to English text using **OpenAI Audio Transcription Model** based on mp3 file uploaded. 
 
 This project leverages **OpenAI APIs** and follows a **Microservice & Microfrontend architecture** using **Spring Boot (Spring AI)** and **React**.
 
@@ -15,6 +16,7 @@ This project leverages **OpenAI APIs** and follows a **Microservice & Microfront
 - 🧠 **AI-Powered Chat**: Users can ask questions and get responses from OpenAI.
 - 🎨 **Image Generation**: Users can generate images based on text prompts.
 - 🍽️ **Recipe Generator**: Users can input ingredients, and the AI suggests recipes.
+- 🔊 ****Audio Transcriber**: User can upload Mp3 File, and the AI will transcribe audio file to text.
 - 🔗 **Microservices & Microfrontend**: Uses independent services for scalability and flexibility.
 - 🌟 **Custom Prompt Templates**: Uses `PromptTemplate` to format responses as required.
 
@@ -28,6 +30,8 @@ This project leverages **OpenAI APIs** and follows a **Microservice & Microfront
   - `ChatModel`
   - `OpenAiImageModel`
   - `OpenAiImageOptions`
+  - `OpenAiAudioTranscriptionModel`
+  - `OpenAiAudioTranscriptionOptions`
   - `PromptTemplate`
 - **Microservices architecture** for modular development.
 
@@ -44,11 +48,6 @@ This project leverages **OpenAI APIs** and follows a **Microservice & Microfront
    - **Ask a Question**: Enter your query and get a response from OpenAI.
    - **Generate Image**: Provide a description, and OpenAI will create an image.
    - **Create Recipe**: Enter ingredients, and OpenAI will generate a recipe.
+   - **Audio Transcriber**: Upload Mp3 File, and OpenAI will generate a text.
 3. Enjoy AI-powered interactions!
 
-## Future Enhancements
-
-- 🔥 **User Authentication** for personalized experiences.
-- 📊 **History & Logs** to track previous queries and results.
-- 🎤 **Voice Input Support** for chat and commands.
----
