@@ -5,7 +5,7 @@ function ChatGenerator(){
     const [promptQuestion, setPromptQuestion] = useState("");
     const [aiResponse, setAiResponse] = useState("");
 
-    let HostURL = "http://localhost:8080/ask?prompt=";
+    let HostURL = "http://localhost:8080/api/ask/question?prompt=";
 
     const askAI = async () => {
         try{

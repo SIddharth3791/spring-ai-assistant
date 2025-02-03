@@ -5,7 +5,7 @@ function ImageGenerator(){
     const[imgPrompt, setImgPrompt] = useState('');
     const[imageUrls, setImageUrls ] = useState([]);
 
-    let HostURL = "http://localhost:8080/createImg?imageIdea=";
+    let HostURL = "http://localhost:8080/api/createImg?imageIdea=";
 
     const generateImage = async() => {
         try{

@@ -7,7 +7,7 @@ function RecipeGenerator(){
     const [dietryRes , setDietryRes] = useState("")
     const [recipe, setRecipe] = useState("")
 
-    let HostURL = "http://localhost:8080/create/recipe";
+    let HostURL = "http://localhost:8080/api/create/recipe";
 
     const generateRecipe = async()=>{
         try{
@@ -59,7 +59,7 @@ function RecipeGenerator(){
                  <button onClick={generateRecipe}> Generate Recipe</button>
 
                  <div>
-                    <pre className="recipe-text">{recipe}</pre>
+                    <pre className="result-text">{recipe}</pre>
                  </div>
 
 
